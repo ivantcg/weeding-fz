@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Mencegah kotak biru/abu-abu muncul saat tombol ditekan di layar HP */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* Menyembunyikan scrollbar bawaan browser secara global */
+  ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+    display: none;
+  }
+}
+
+html, body {
+  background-color: #050505;
+  color: #ffffff;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* Memastikan area konten yang bisa di-scroll tidak memunculkan scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.custom-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
