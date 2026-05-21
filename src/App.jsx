@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Home, Heart, MapPin, Send } from 'lucide-react';
+import { Home, Heart, MapPin, Send, Copy, Check, Music } from 'lucide-react';
 
 // --- ANIMASI PARTIKEL EMAS MENGAMBANG ---
 const GoldParticles = () => {
@@ -26,18 +26,14 @@ const CoverApp = ({ onOpen }) => (
     initial={{ y: 0 }} exit={{ y: '-100vh', opacity: 0 }} transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
     className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#050505] overflow-hidden"
   >
-    {/* Background Bertekstur */}
     <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1507676184212-d0330a151f96?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-10 mix-blend-luminosity"></div>
     <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-transparent to-[#050505]"></div>
     
     <GoldParticles />
 
-    {/* Bingkai Emas */}
     <div className="relative z-10 w-[90%] max-w-md h-[85vh] border border-amber-500/30 rounded-t-[10rem] p-8 flex flex-col items-center justify-center shadow-[0_0_50px_rgba(245,158,11,0.05)] bg-[#0a0a0a]/50 backdrop-blur-sm">
       <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.6 }}
+        initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}
         className="text-center mb-4"
       >
         <p className="font-serif text-3xl md:text-4xl italic text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-200 drop-shadow-sm">
@@ -47,9 +43,7 @@ const CoverApp = ({ onOpen }) => (
       </motion.div>
       
       <motion.h1 
-        initial={{ opacity: 0, scale: 0.95 }} 
-        animate={{ opacity: 1, scale: 1 }} 
-        transition={{ delay: 1, duration: 1 }} 
+        initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 1, duration: 1 }} 
         className="font-serif text-5xl md:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-amber-100 via-amber-400 to-amber-700 mb-8 text-center drop-shadow-xl leading-tight"
       >
         Faisal <br/><span className="text-3xl font-light text-amber-500/50">&</span><br/> Zahida
@@ -63,8 +57,7 @@ const CoverApp = ({ onOpen }) => (
       </motion.div>
       
       <motion.button 
-        initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.8 }}
-        onClick={onOpen}
+        initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.8 }} onClick={onOpen}
         className="group relative px-10 py-4 bg-gradient-to-r from-amber-700 via-amber-500 to-amber-700 rounded-full overflow-hidden shadow-[0_0_30px_rgba(245,158,11,0.2)] hover:shadow-[0_0_40px_rgba(245,158,11,0.4)] transition-all duration-500"
       >
         <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
@@ -90,13 +83,7 @@ const HomeView = () => (
       
       <p className="text-zinc-400 font-light tracking-[0.3em] text-sm mb-14 uppercase">07 Juni 2026</p>
 
-      {/* --- Bagian Ayat Al-Qur'an --- */}
-      <motion.div 
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5, duration: 1 }}
-        className="px-4 relative"
-      >
+      <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 1 }} className="px-4 relative">
         <div className="flex justify-center items-center gap-4 mb-6">
           <div className="w-12 h-[1px] bg-gradient-to-r from-transparent to-amber-500/50"></div>
           <Heart size={14} className="text-amber-500/50" fill="currentColor" />
@@ -112,7 +99,6 @@ const HomeView = () => (
         <p className="text-zinc-400 font-light text-[11px] md:text-xs leading-relaxed mb-6 italic">
           "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang."
         </p>
-        
         <p className="text-amber-500/80 text-[10px] font-medium tracking-[0.2em] uppercase">QS. Ar-Rum: 21</p>
       </motion.div>
     </div>
@@ -128,7 +114,6 @@ const CoupleView = () => (
     </div>
     
     <div className="space-y-12 max-w-md mx-auto">
-      {/* Pria */}
       <div className="relative p-1 rounded-t-full rounded-b-3xl bg-gradient-to-b from-amber-500/30 to-transparent">
         <div className="bg-[#0a0a0a] rounded-t-full rounded-b-[22px] p-6 flex flex-col items-center text-center">
           <div className="w-36 h-36 rounded-full overflow-hidden mb-6 border-2 border-amber-500/40 p-1">
@@ -139,7 +124,6 @@ const CoupleView = () => (
         </div>
       </div>
 
-      {/* Wanita */}
       <div className="relative p-1 rounded-t-full rounded-b-3xl bg-gradient-to-b from-amber-500/30 to-transparent">
         <div className="bg-[#0a0a0a] rounded-t-full rounded-b-[22px] p-6 flex flex-col items-center text-center">
           <div className="w-36 h-36 rounded-full overflow-hidden mb-6 border-2 border-amber-500/40 p-1">
@@ -197,17 +181,33 @@ const LocationView = () => (
   </motion.div>
 );
 
-// --- HALAMAN RSVP & UCAPAN ---
+// --- HALAMAN RSVP & DIGITAL AMPLOP ---
 const RSVPView = () => {
   const [formData, setFormData] = useState({ nama: '', kehadiran: 'Hadir', keterangan: '' });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [copiedBank, setCopiedBank] = useState(null); 
+  
+  const rekPria = "340601049432534"; 
+  const bankPria = "BRI";
+  const logoPria = "/bri.jpg"; 
+  const namaPria = "FAISAL MUHAMMAD RIFAN";
+
+  const rekWanita = "1360032744705"; 
+  const bankWanita = "BANK MANDIRI";
+  const logoWanita = "/mandiri.jpg"; 
+  const namaWanita = "ZAHIDA MAHARANI";
+
+  const handleCopy = (rekening, bankName) => {
+    navigator.clipboard.writeText(rekening);
+    setCopiedBank(bankName);
+    setTimeout(() => setCopiedBank(null), 2000); 
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
-    
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbyAOj9pd8ZWdEUyxEYWZXdvLXOfKUADjNNS5gP_vpR0j0j5aUs454m2HvodOClIoUd3/exec'; 
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyN2c4Q5tEwJU-LXWfMYm5fjULsne-moLPOX7vSRninvGmOz4Tm9NXokFO3yeHKq2p0/exec'; 
     
     const data = new FormData();
     data.append('nama', formData.nama);
@@ -220,7 +220,7 @@ const RSVPView = () => {
         setIsLoading(false);
         setIsSubmitted(true);
       })
-      .catch((error) => {
+      .catch(() => {
         setIsLoading(false);
         alert('Maaf, koneksi terputus. Silakan coba lagi.');
       });
@@ -229,11 +229,11 @@ const RSVPView = () => {
   return (
     <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} className="min-h-screen pt-20 pb-10 px-6 flex flex-col items-center">
       <div className="text-center mb-12">
-        <h2 className="font-serif text-4xl text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-amber-600 mb-2">RSVP & Ucapan</h2>
+        <h2 className="font-serif text-4xl text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-amber-600 mb-2">RSVP & Hadiah</h2>
         <div className="w-12 h-0.5 bg-amber-500/50 mx-auto"></div>
       </div>
       
-      <div className="w-full max-w-md bg-gradient-to-b from-amber-900/20 to-[#0a0a0a] p-1 rounded-3xl">
+      <div className="w-full max-w-md bg-gradient-to-b from-amber-900/20 to-[#0a0a0a] p-1 rounded-3xl mb-8">
         <div className="bg-[#0a0a0a] p-8 rounded-[22px] border border-white/5 shadow-2xl relative">
           {isSubmitted ? (
             <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="text-center py-6">
@@ -248,53 +248,68 @@ const RSVPView = () => {
           ) : (
             <>
               <p className="text-zinc-400 text-sm text-center mb-8 font-light">Mohon konfirmasi kehadiran Anda untuk kelancaran acara kami.</p>
-              
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
-                  <input 
-                    type="text" 
-                    required
-                    placeholder="Nama Lengkap Anda" 
-                    value={formData.nama}
-                    onChange={(e) => setFormData({...formData, nama: e.target.value})}
-                    className="w-full bg-[#111] border border-white/10 rounded-xl p-4 text-white text-sm focus:outline-none focus:border-amber-500/50 transition-colors placeholder:text-zinc-600" 
-                    disabled={isLoading}
-                  />
+                  <input type="text" required placeholder="Nama Lengkap Anda" value={formData.nama} onChange={(e) => setFormData({...formData, nama: e.target.value})} className="w-full bg-[#111] border border-white/10 rounded-xl p-4 text-white text-sm focus:outline-none focus:border-amber-500/50 transition-colors placeholder:text-zinc-600" disabled={isLoading} />
                 </div>
-                
                 <div>
-                  <select 
-                    value={formData.kehadiran}
-                    onChange={(e) => setFormData({...formData, kehadiran: e.target.value})}
-                    className="w-full bg-[#111] border border-white/10 rounded-xl p-4 text-white text-sm focus:outline-none focus:border-amber-500/50 transition-colors appearance-none"
-                    disabled={isLoading}
-                  >
+                  <select value={formData.kehadiran} onChange={(e) => setFormData({...formData, kehadiran: e.target.value})} className="w-full bg-[#111] border border-white/10 rounded-xl p-4 text-white text-sm focus:outline-none focus:border-amber-500/50 transition-colors appearance-none" disabled={isLoading}>
                     <option value="Hadir">Ya, Saya akan hadir</option>
                     <option value="Tidak Hadir">Maaf, Saya tidak bisa hadir</option>
                   </select>
                 </div>
-
                 <div>
-                  <textarea 
-                    placeholder="Tuliskan ucapan atau doa restu..." 
-                    rows="3" 
-                    value={formData.keterangan}
-                    onChange={(e) => setFormData({...formData, keterangan: e.target.value})}
-                    className="w-full bg-[#111] border border-white/10 rounded-xl p-4 text-white text-sm focus:outline-none focus:border-amber-500/50 transition-colors placeholder:text-zinc-600 resize-none"
-                    disabled={isLoading}
-                  ></textarea>
+                  <textarea placeholder="Tuliskan ucapan atau doa restu..." rows="3" value={formData.keterangan} onChange={(e) => setFormData({...formData, keterangan: e.target.value})} className="w-full bg-[#111] border border-white/10 rounded-xl p-4 text-white text-sm focus:outline-none focus:border-amber-500/50 transition-colors placeholder:text-zinc-600 resize-none" disabled={isLoading}></textarea>
                 </div>
-
-                <button 
-                  type="submit" 
-                  disabled={isLoading}
-                  className="w-full mt-2 bg-gradient-to-r from-amber-700 via-amber-500 to-amber-700 text-white font-medium tracking-widest text-xs py-4 rounded-xl shadow-[0_0_20px_rgba(245,158,11,0.2)] hover:shadow-[0_0_30px_rgba(245,158,11,0.4)] transition-all uppercase"
-                >
+                <button type="submit" disabled={isLoading} className="w-full mt-2 bg-gradient-to-r from-amber-700 via-amber-500 to-amber-700 text-white font-medium tracking-widest text-xs py-4 rounded-xl shadow-[0_0_20px_rgba(245,158,11,0.2)] hover:shadow-[0_0_30px_rgba(245,158,11,0.4)] transition-all uppercase">
                   {isLoading ? 'Mengirim...' : 'Kirim Konfirmasi'}
                 </button>
               </form>
             </>
           )}
+        </div>
+      </div>
+
+      <div className="w-full max-w-md bg-gradient-to-b from-amber-900/20 to-[#0a0a0a] p-1 rounded-3xl mb-8">
+        <div className="bg-[#0a0a0a] p-8 rounded-[22px] border border-white/5 shadow-2xl relative text-center">
+          <h3 className="font-serif text-3xl text-white mb-2">Wedding Gift</h3>
+          <p className="text-zinc-400 text-sm font-light leading-relaxed mb-6">Tanpa mengurangi rasa hormat, bagi Bapak/Ibu/Saudara/i yang ingin memberikan tanda kasih untuk kami, dapat melalui:</p>
+
+          <div className="mb-8">
+            <div className="bg-[#111] border border-white/10 rounded-xl p-6 mb-3 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-16 h-16 bg-amber-500/10 blur-[20px]"></div>
+              <div className="flex items-center justify-center gap-3 mb-3 relative z-10">
+                <div className="bg-white px-2 py-1.5 rounded shadow-sm">
+                  <img src={logoPria} alt={bankPria} className="h-4 object-contain" />
+                </div>
+                <p className="text-amber-500 font-medium tracking-widest uppercase">{bankPria}</p>
+              </div>
+              <p className="text-2xl text-white font-mono tracking-wider mb-2 relative z-10">{rekPria}</p>
+              <p className="text-zinc-500 text-xs font-light uppercase tracking-wider relative z-10">a.n {namaPria}</p>
+            </div>
+            <button onClick={() => handleCopy(rekPria, bankPria)} className="flex items-center justify-center gap-2 w-full bg-white/5 hover:bg-white/10 text-amber-400 border border-amber-500/30 font-medium tracking-widest text-xs py-3.5 rounded-xl transition-all uppercase">
+              {copiedBank === bankPria ? <Check size={16} className="text-green-400" /> : <Copy size={16} />}
+              {copiedBank === bankPria ? <span className="text-green-400">Tersalin!</span> : 'Salin Rekening'}
+            </button>
+          </div>
+
+          <div>
+            <div className="bg-[#111] border border-white/10 rounded-xl p-6 mb-3 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-16 h-16 bg-amber-500/10 blur-[20px]"></div>
+              <div className="flex items-center justify-center gap-3 mb-3 relative z-10">
+                <div className="bg-white px-2 py-1.5 rounded shadow-sm">
+                  <img src={logoWanita} alt={bankWanita} className="h-4 object-contain" />
+                </div>
+                <p className="text-amber-500 font-medium tracking-widest uppercase">{bankWanita}</p>
+              </div>
+              <p className="text-2xl text-white font-mono tracking-wider mb-2 relative z-10">{rekWanita}</p>
+              <p className="text-zinc-500 text-xs font-light uppercase tracking-wider relative z-10">a.n {namaWanita}</p>
+            </div>
+            <button onClick={() => handleCopy(rekWanita, bankWanita)} className="flex items-center justify-center gap-2 w-full bg-white/5 hover:bg-white/10 text-amber-400 border border-amber-500/30 font-medium tracking-widest text-xs py-3.5 rounded-xl transition-all uppercase">
+              {copiedBank === bankWanita ? <Check size={16} className="text-green-400" /> : <Copy size={16} />}
+              {copiedBank === bankWanita ? <span className="text-green-400">Tersalin!</span> : 'Salin Rekening'}
+            </button>
+          </div>
         </div>
       </div>
     </motion.div>
@@ -305,12 +320,8 @@ const RSVPView = () => {
 const Copyright = () => (
   <div className="w-full flex flex-col items-center justify-center pt-8 pb-32 opacity-80 relative z-10">
     <div className="w-16 h-[1px] bg-gradient-to-r from-transparent via-amber-500/30 to-transparent mb-4"></div>
-    <p className="text-zinc-400 font-light text-[10px] tracking-[0.3em] uppercase mb-1.5">
-      © 2026 Faisal & Zahida
-    </p>
-    <p className="text-zinc-500 font-light text-[9px] tracking-widest">
-      Digital Invitation by <span className="text-amber-500/80">weeding_faisal_zahida</span>
-    </p>
+    <p className="text-zinc-400 font-light text-[10px] tracking-[0.3em] uppercase mb-1.5">© 2026 Faisal & Zahida</p>
+    <p className="text-zinc-500 font-light text-[9px] tracking-widest">Digital Invitation by <span className="text-amber-500/80">weeding_faisal_zahida</span></p>
   </div>
 );
 
@@ -318,6 +329,34 @@ const Copyright = () => (
 export default function App() {
   const [isOpened, setIsOpened] = useState(false);
   const [activeTab, setActiveTab] = useState('home');
+  
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef(null);
+
+  useEffect(() => {
+    // --- GANTI NAMA FILE MUSIK DI SINI JIKA PERLU ---
+    audioRef.current = new Audio('/weddingsong.mp3'); 
+    audioRef.current.loop = true;
+
+    return () => {
+      if (audioRef.current) audioRef.current.pause();
+    };
+  }, []);
+
+  useEffect(() => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.play().catch(err => console.log("Autoplay diblokir:", err));
+      } else {
+        audioRef.current.pause();
+      }
+    }
+  }, [isPlaying]);
+
+  const handleOpenInvitation = () => {
+    setIsOpened(true);
+    setIsPlaying(true); 
+  };
 
   const renderView = () => {
     switch(activeTab) {
@@ -332,7 +371,7 @@ export default function App() {
   return (
     <div className="font-sans bg-[#050505] min-h-screen text-white overflow-x-hidden selection:bg-amber-600/30 relative">
       <AnimatePresence>
-        {!isOpened && <CoverApp onOpen={() => setIsOpened(true)} />}
+        {!isOpened && <CoverApp onOpen={handleOpenInvitation} />}
       </AnimatePresence>
 
       {isOpened && (
@@ -343,10 +382,17 @@ export default function App() {
             {renderView()}
           </AnimatePresence>
           
-          {/* Copyright sekarang dirender dengan benar di semua halaman! */}
           <Copyright />
 
-          {/* Bottom Navigation Mewah */}
+          <div className="fixed bottom-24 right-6 z-50 pointer-events-none">
+            <button 
+              onClick={() => setIsPlaying(!isPlaying)}
+              className={`pointer-events-auto p-3.5 rounded-full bg-[#111]/90 border border-white/10 text-amber-400 shadow-2xl backdrop-blur-xl flex items-center justify-center transition-transform hover:scale-110 active:scale-95 ${isPlaying ? 'animate-spin [animation-duration:8s]' : ''}`}
+            >
+              {isPlaying ? <Music size={20} strokeWidth={1.5} /> : <span className="text-xs">🔇</span>}
+            </button>
+          </div>
+
           <div className="fixed bottom-6 left-0 right-0 z-40 px-4 pointer-events-none">
             <div className="max-w-md mx-auto pointer-events-auto">
               <div className="bg-[#111]/80 backdrop-blur-2xl border border-white/10 rounded-2xl flex justify-around items-center p-2 shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
@@ -363,16 +409,10 @@ export default function App() {
   );
 }
 
-// Tombol Navigasi
 const NavButton = ({ icon, label, isActive, onClick }) => (
-  <button 
-    onClick={onClick}
-    className={`relative flex flex-col items-center gap-1.5 w-16 py-2 transition-all duration-300 ${isActive ? 'text-amber-400' : 'text-zinc-500 hover:text-zinc-300'}`}
-  >
+  <button onClick={onClick} className={`relative flex flex-col items-center gap-1.5 w-16 py-2 transition-all duration-300 ${isActive ? 'text-amber-400' : 'text-zinc-500 hover:text-zinc-300'}`}>
     {icon}
     <span className="text-[10px] tracking-widest font-medium uppercase">{label}</span>
-    {isActive && (
-      <motion.div layoutId="activeNav" className="absolute -top-2 w-8 h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent opacity-50" />
-    )}
+    {isActive && <motion.div layoutId="activeNav" className="absolute -top-2 w-8 h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent opacity-50" />}
   </button>
 );
