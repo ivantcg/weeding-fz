@@ -156,7 +156,7 @@ const LocationView = () => (
         <p className="text-zinc-400 text-sm font-light leading-relaxed mb-8">
           Jl. Ngadirejo, Desa Kliris <br/>Kec. Boja, Kabupaten Kendal <br/> 51372
         </p>
-        <a href="https://maps.app.goo.gl/1szvRf2hzUhRhPTXA" target="_blank" rel="noreferrer" className="inline-block w-full bg-amber-600 hover:bg-amber-500 text-white font-medium py-4 rounded-xl text-sm transition-colors shadow-[0_0_20px_rgba(217,119,6,0.3)]">
+        <a href="https://goo.gl/maps/taAwYjC6FiJsptkj6" target="_blank" rel="noreferrer" className="inline-block w-full bg-amber-600 hover:bg-amber-500 text-white font-medium py-4 rounded-xl text-sm transition-colors shadow-[0_0_20px_rgba(217,119,6,0.3)]">
           Lihat Google Maps
         </a>
       </div>
@@ -173,7 +173,7 @@ const LocationView = () => (
         <p className="text-zinc-400 text-sm font-light leading-relaxed mb-8">
           Jl. Ngadirejo, Desa Kliris <br/>Kec. Boja, Kabupaten Kendal <br/> 51372
         </p>
-        <a href="https://maps.app.goo.gl/1szvRf2hzUhRhPTXA" target="_blank" rel="noreferrer" className="inline-block w-full bg-amber-600 hover:bg-amber-500 text-white font-medium py-4 rounded-xl text-sm transition-colors shadow-[0_0_20px_rgba(217,119,6,0.3)]">
+        <a href="https://goo.gl/maps/taAwYjC6FiJsptkj6" target="_blank" rel="noreferrer" className="inline-block w-full bg-amber-600 hover:bg-amber-500 text-white font-medium py-4 rounded-xl text-sm transition-colors shadow-[0_0_20px_rgba(217,119,6,0.3)]">
           Lihat Google Maps
         </a>
       </div>
