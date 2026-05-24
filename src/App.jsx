@@ -155,7 +155,7 @@ const LocationView = () => (
           <MapPin size={28} className="text-amber-600" strokeWidth={1.5} />
         </div>
         <h3 className="text-zinc-900 font-serif text-3xl mb-2">Akad</h3>
-        <p className="text-amber-700 text-sm mb-6 font-medium tracking-widest uppercase">07.00 - Selesai (WIB)</p>
+        <p className="text-amber-700 text-sm mb-6 font-medium tracking-widest uppercase">13.00 - Selesai (WIB)</p>
         <p className="text-zinc-800 text-base mb-2 font-medium">Minggu, 07 Juni 2026</p>
         <p className="text-zinc-600 text-sm font-light leading-relaxed mb-8">
           Jl. Ngadirejo, Desa Kliris <br/>Kec. Boja, Kabupaten Kendal <br/> 51372
