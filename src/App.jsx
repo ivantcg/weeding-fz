@@ -119,7 +119,7 @@ const CoupleView = () => (
       {/* Pria */}
       <div className="relative p-1 rounded-3xl bg-gradient-to-b from-amber-200 to-transparent shadow-sm">
         <div className="bg-white rounded-[22px] p-10 flex flex-col items-center text-center">
-          <h3 className="font-serif text-3xl text-zinc-900 mb-4">Faisal Muhammad Irfan</h3>
+          <h3 className="font-serif text-3xl text-zinc-900 mb-4">Faisal Muhammad Rifan</h3>
           <p className="text-sm text-zinc-600 font-light leading-relaxed">
             Putra dari<br/>
             <span className="text-amber-800 font-medium text-base block mt-1">Bpk. Ismail & Ibu Ismatul Ulya</span>
