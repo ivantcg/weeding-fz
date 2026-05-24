@@ -158,7 +158,7 @@ const LocationView = () => (
         <p className="text-amber-700 text-sm mb-6 font-medium tracking-widest uppercase">13.00 - Selesai (WIB)</p>
         <p className="text-zinc-800 text-base mb-2 font-medium">Minggu, 07 Juni 2026</p>
         <p className="text-zinc-600 text-sm font-light leading-relaxed mb-8">
-          Jl. Ngadirejo, Desa Kliris <br/>Kec. Boja, Kabupaten Kendal <br/> 51372
+          Jl. Ngadirejo, Dusun Kalikidang RT 01 RW 06, Desa Kliris <br/>Kec. Boja, Kabupaten Kendal <br/> 51372
         </p>
         <a href="https://goo.gl/maps/taAwYjC6FiJsptkj6" target="_blank" rel="noreferrer" className="inline-block w-full bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-700 hover:to-amber-600 text-white font-medium py-4 rounded-xl text-sm transition-colors shadow-sm">
           Lihat Google Maps
@@ -175,7 +175,7 @@ const LocationView = () => (
         <p className="text-amber-700 text-sm mb-6 font-medium tracking-widest uppercase">13.00 - Selesai (WIB)</p>
         <p className="text-zinc-800 text-base mb-2 font-medium">Minggu, 07 Juni 2026</p>
         <p className="text-zinc-600 text-sm font-light leading-relaxed mb-8">
-          Jl. Ngadirejo, Desa Kliris <br/>Kec. Boja, Kabupaten Kendal <br/> 51372
+          Jl. Ngadirejo, Dusun Kalikidang RT 01 RW 06, Desa Kliris <br/>Kec. Boja, Kabupaten Kendal <br/> 51372
         </p>
         <a href="https://goo.gl/maps/taAwYjC6FiJsptkj6" target="_blank" rel="noreferrer" className="inline-block w-full bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-700 hover:to-amber-600 text-white font-medium py-4 rounded-xl text-sm transition-colors shadow-sm">
           Lihat Google Maps
